@@ -15,3 +15,7 @@ Lista de exercicios 01:
 
 4) Nome do projeto: 00_exercicios_01_-_04
 	Aperte W para alternar entre os 2 fragment shaders
+	
+	
+	
+P.S.: Depois de ter terminado eu notei que pede para fazer triangulo, como usei os exemplos de aula eu acabei deixando dois triangulos formando um retangulo.
