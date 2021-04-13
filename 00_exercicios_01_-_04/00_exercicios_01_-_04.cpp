@@ -1,11 +1,11 @@
 
-#include <GL/gl3w.h> // here: we need compile gl3w.c - utils dir
+#include <GL/gl3w.h> 
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <sstream>
 #include <cmath>
 
-#include "gl_utils.h" // parser for shader source files
+#include "gl_utils.h" 
 
 
 #include <glm/glm.hpp>
@@ -17,7 +17,6 @@ static int width = 800, height = 600;
 bool change = false;
 
 
-//Function prototypes
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void reshape_callback(GLFWwindow* window, int width, int height);
 void showFPS(GLFWwindow* window);
@@ -59,15 +58,15 @@ int main()
 
 
     GLfloat vertices[] = {
-      -0.5f,  0.5f, 0.0f,		// Top left
-      0.5f,  0.5f, 0.0f,		// Top right
-      0.5f, -0.5f, 0.0f,		// Bottom right
-      -0.5f, -0.5f, 0.0f		// Bottom left
+      -0.5f,  0.5f, 0.0f,		
+      0.5f,  0.5f, 0.0f,		
+      0.5f, -0.5f, 0.0f,		
+      -0.5f, -0.5f, 0.0f		
     };
 
     GLuint indices[] = {
-      0, 1, 2,  // First Triangle
-      0, 2, 3   // Second Triangle
+      0, 1, 2,  
+      0, 2, 3   
     };
 
 
@@ -164,18 +163,13 @@ int main()
     glDeleteShader(fs);
     glDeleteShader(fs2);
 
-
-    // Rendering loop
     while (!glfwWindowShouldClose(g_window))
     {
         showFPS(g_window);
 
-        // Poll for and process events
         glfwPollEvents();
 
-        // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT);
-
 
         if (change) {
             glUseProgram(shaderProgram);
@@ -183,14 +177,9 @@ int main()
             glUseProgram(shaderProgram2);
         }
 
-
-        // Render the quad (two triangles)
-
-        // update shader uniform
         float timeValue = (float)glfwGetTime();
         float greenValue = sin(timeValue) / 2.0f + 0.5f;
 
-        //uniforms
         int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
         float redValue = 1.0f - greenValue;
         glUniform4f(vertexColorLocation, redValue, greenValue, 0.0f, 1.0f);
@@ -199,7 +188,6 @@ int main()
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
 
-        // Swap front and back buffers
         glfwSwapBuffers(g_window);
     }
 
@@ -214,9 +202,6 @@ int main()
     return 0;
 }
 
-//-----------------------------------------------------------------------------
-// Is called whenever a key is pressed/released via GLFW
-//-----------------------------------------------------------------------------
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
     static bool gWireframe = 0;
@@ -231,44 +216,34 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 }
 
-//-----------------------------------------------------------------------------
-// Is called when the window is resized
-//-----------------------------------------------------------------------------
 void reshape_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }
 
-//-----------------------------------------------------------------------------
-// Code computes the average frames per second, and also the average time it takes
-// to render one frame.  These stats are appended to the window caption bar.
-//-----------------------------------------------------------------------------
 void showFPS(GLFWwindow* window)
 {
     static double previousSeconds = 0.0;
     static int frameCount = 0;
     double elapsedSeconds;
-    double currentSeconds = glfwGetTime(); // returns number of seconds since GLFW started, as double float
+    double currentSeconds = glfwGetTime();
 
     elapsedSeconds = currentSeconds - previousSeconds;
 
-    // Limit text updates to 4 times per second
     if (elapsedSeconds > 0.25)
     {
         previousSeconds = currentSeconds;
         double fps = (double)frameCount / elapsedSeconds;
         double msPerFrame = 1000.0 / fps;
 
-        // The C++ way of setting the window title
         std::ostringstream outs;
-        outs.precision(3);	// decimal places
+        outs.precision(3);	
         outs << std::fixed
             << "Shaders:: uniforms" << "    "
             << "FPS: " << fps << "    "
             << "Frame Time: " << msPerFrame << " (ms)";
         glfwSetWindowTitle(window, outs.str().c_str());
 
-        // Reset for next average.
         frameCount = 0;
     }
 
