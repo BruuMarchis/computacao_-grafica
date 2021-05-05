@@ -216,7 +216,9 @@ int main( )
 
   glm::mat4 model(1.0f);
   unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
+  model = glm::translate(model, glm::vec3(-0.5f, -0.5f, 0.0f));
   model = glm::rotate(model, glm::radians(30.0f), glm::vec3(0.0, 0.0, 1.0));
+  model = glm::translate(model, glm::vec3(0.5f, 0.5f, 0.0f));
   glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
 

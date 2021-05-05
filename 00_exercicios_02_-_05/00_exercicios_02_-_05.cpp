@@ -10,8 +10,13 @@
 #include <glm/gtx/string_cast.hpp>
 
 static int width = 800, height = 600;
-float dx = 1.0f, dy = 1.0f, dz = 5.0f;
 glm::mat4 view = glm::mat4(1.0);
+
+float yaw = 0.0f;
+
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 target = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
@@ -28,40 +33,23 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
             glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     }
 
-    if (key == GLFW_KEY_A && action == GLFW_PRESS)
-    {
-            dx -= 1.0;
-    }
 
-    else if (key == GLFW_KEY_D && action == GLFW_PRESS)
-    {
-            dx += 1.0;
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+        yaw += 5.0f;
+        if (yaw >= 360) {
+            yaw = yaw - 360;
+        }
     }
-    else if (key == GLFW_KEY_W && action == GLFW_PRESS)
-    {
-        dy += 1.0;
+        
+
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+        yaw -= 5.0f;
+
+        if (yaw <= 0) {
+            yaw = 360 - yaw;
+        }
     }
-    else if (key == GLFW_KEY_S && action == GLFW_PRESS)
-    {
-        dy -= 1.0;
-    }
-    else if (key == GLFW_KEY_Q && action == GLFW_PRESS)
-    {
-        dz += 1.0;
-    }
-    else if (key == GLFW_KEY_Z && action == GLFW_PRESS)
-    {
-        dz -= 1.0;
-    }
-    else if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
-    {
-        dx = dy = 0.0f;
-        dz = 5.0;
-    }
-    else if (key == GLFW_KEY_P && action == GLFW_PRESS) {
-        std::cout << "dx,dy,dz = (" << dx << "," << dy << "," << dz << ")" << std::endl;
-        std::cout << "view matrix " << glm::to_string(view) << std::endl;
-    }
+    
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int _width, int _height)
@@ -159,15 +147,15 @@ int main( )
 
 
   float vertices[] = {
-      1.0f, 1.0f, 1.0f,   1.0f, 1.0f, 1.0f,
-      1.0f, 0.0f, 1.0f,   1.0f, 0.0f, 1.0f,
-      0.0f, 0.0f, 1.0f,   0.0f, 0.0f, 1.0f,   
-      0.0f, 1.0f, 1.0f,   1.0f, 1.0f, 0.0f,
-      1.0f, 1.0f, 0.0f,   1.0f, 1.0f, 0.0f,
-      1.0f, 0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
-      0.0f, 0.0f, 0.0f,   0.0f, 0.0f, 0.0f,
-      0.0f, 1.0f, 0.0f,   0.0f, 1.0f, 0.0f,
-      0.5f,  2.0f,  0.5f,   0.0f, 0.0f, 0.0f 
+      0.5f,  0.5f,  0.5f,   1.0f, 1.0f, 1.0f,
+      0.5f, -0.5f,  0.5f,   1.0f, 0.0f, 1.0f,
+     -0.5f, -0.5f,  0.5f,   0.0f, 0.0f, 1.0f,
+     -0.5f,  0.5f,  0.5f,   1.0f, 1.0f, 0.0f,
+      0.5f,  0.5f, -0.5f,   1.0f, 1.0f, 0.0f,
+      0.5f, -0.5f, -0.5f,   1.0f, 0.0f, 0.0f,
+     -0.5f, -0.5f, -0.5f,   0.0f, 0.0f, 0.0f,
+     -0.5f,  0.5f, -0.5f,   0.0f, 1.0f, 0.0f,
+      0.0f,  1.5f,  0.0f,   0.0f, 0.0f, 0.0f
 
 
   };
@@ -233,12 +221,15 @@ int main( )
   
 
   std::cout << "Camera position" << std::endl;
-  std::cout << "dx,dy,dz = (" << dx << "," << dy << "," << dz << ")" << std::endl;
 
   while ( !glfwWindowShouldClose( g_window ) )
     {
+
+      cameraPos.x = 5 * cos(glm::radians(yaw));
+      cameraPos.z = 5 * sin(glm::radians(yaw));
+
       view = glm::mat4(1.0f);
-      view = glm::lookAt(glm::vec3(dx, dy, dz), glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f));
+      view = glm::lookAt(cameraPos, target, cameraUp);
       glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &view[0][0]);
 
       glfwPollEvents( );

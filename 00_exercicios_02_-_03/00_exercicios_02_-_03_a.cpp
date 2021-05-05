@@ -167,7 +167,7 @@ int main( )
       1.0f, 0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
       0.0f, 0.0f, 0.0f,   0.0f, 0.0f, 0.0f,
       0.0f, 1.0f, 0.0f,   0.0f, 1.0f, 0.0f,
-      0.5f,  2.0f,  0.5f,   0.0f, 0.0f, 0.0f
+      0.5f, 2.0f, 0.5f,   0.0f, 0.0f, 0.0f
 
 
   };
@@ -215,6 +215,7 @@ int main( )
 
   glm::mat4 model(1.0f);
   unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
+  model = glm::translate(model, glm::vec3(-0.5f, -0.5f, 0.0f));
   model = glm::scale(model, glm::vec3(2.0, 0.5, 3.0));
   glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 

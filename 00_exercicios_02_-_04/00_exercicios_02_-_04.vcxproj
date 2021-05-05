@@ -21,7 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\utils\gl3w.c" />
     <ClCompile Include="..\utils\gl_utils.cpp" />
-    <ClCompile Include="00_exercicios_02_-_04_a.cpp" />
+    <ClCompile Include="00_exercicios_02_-_04_b.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="transf_fs.glsl" />

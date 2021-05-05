@@ -1,0 +1,6 @@
+# computacao_-grafica
+
+
+Lista de exercicios 03:
+
+1. Use as teclas A e D para mudar o percentual da mistura em 10%.
