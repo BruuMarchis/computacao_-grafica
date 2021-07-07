@@ -1,0 +1,19 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: O diretório intermediário (x64\Debug\) contém arquivos compartilhados de outro projeto (05_04_model_loading.vcxproj). Isso pode levar a um comportamento incorreto de limpeza e recompilação.
+  00_exercicios_05.cpp
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\utils\filesystem.h(23,35): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\utils\shader_m.h(53,14): warning C4101: 'infoLog': variável local não referenciada
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\utils\shader_m.h(52,13): warning C4101: 'success': variável local não referenciada
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\utils\learnopengl\mesh.h(91,1): warning C4267: 'argumento': conversão de 'size_t' para 'GLsizei', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(119,29): warning C4244: '=': conversão de 'double' para 'int', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(139,28): warning C4244: 'inicializando': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(158,28): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(254,22): warning C4305: '-=': truncamento de 'double' para 'float'
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(260,23): warning C4305: '+=': truncamento de 'double' para 'float'
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(287,21): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(288,21): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(292,23): warning C4244: 'inicializando': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(293,23): warning C4244: 'inicializando': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(295,17): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(296,17): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_05\00_exercicios_05.cpp(308,31): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
+  00_exercicios_05.vcxproj -> C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\x64\Debug\00_exercicios_05.exe

@@ -1,0 +1,15 @@
+﻿  gl3w.c
+  00_exercicios_03_-_03.cpp
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\utils\filesystem.h(23,35): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\utils\shader_m.h(53,14): warning C4101: 'infoLog': variável local não referenciada
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\utils\shader_m.h(52,13): warning C4101: 'success': variável local não referenciada
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_03_-_03\00_exercicios_03_-_03.cpp(162,28): warning C4244: 'inicializando': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_03_-_03\00_exercicios_03_-_03.cpp(250,17): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_03_-_03\00_exercicios_03_-_03.cpp(251,17): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_03_-_03\00_exercicios_03_-_03.cpp(255,19): warning C4244: 'inicializando': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_03_-_03\00_exercicios_03_-_03.cpp(256,19): warning C4244: 'inicializando': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_03_-_03\00_exercicios_03_-_03.cpp(258,13): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_03_-_03\00_exercicios_03_-_03.cpp(259,13): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\00_exercicios_03_-_03\00_exercicios_03_-_03.cpp(267,31): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflita com uso de outras bibliotecas; use /NODEFAULTLIB:library
+  00_exercicios_03_-_03.vcxproj -> C:\Users\55519\source\repos\CG_-_Gonzaga\computacao_-grafica\x64\Debug\00_exercicios_03_-_03.exe
