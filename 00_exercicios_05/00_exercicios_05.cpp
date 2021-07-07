@@ -104,6 +104,7 @@ int main()
 
     static const char* items[]{"Bueiro", "Quadro", "Tronco"};
     static int selectedItem = 0;
+    int lastItem = 0;
     Model ourModels[]{ (FileSystem::getPath("data/bueiro/bueiro.obj")),
                         (FileSystem::getPath("data/quadro/quadro.obj")),
                         (FileSystem::getPath("data/tronco/tronco.obj"))
@@ -134,6 +135,20 @@ int main()
     // -----------
     while (!glfwWindowShouldClose(window))
     {
+
+        if (lastItem != selectedItem) {
+
+            rotateX = 0.0f;
+            rotateY = 0.0f;
+            rotateZ = 0.0f;
+            moveX = 0.5f;
+            moveY = -0.8f;
+            moveZ = 0.0f;
+
+            lastItem = selectedItem;
+
+        }
+
         // per-frame time logic
         // --------------------
         float currentFrame = glfwGetTime();
